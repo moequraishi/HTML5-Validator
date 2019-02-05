@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<title>HTML5 Validator with Vanilla JS and CSS</title>
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Quicksand:300,400,700" rel="stylesheet">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<!-- Styles -->
+	<link rel="stylesheet" href="static/css/styles.css">
+</head>
+<body>
+	<div id="wrapper">
+
+		<form id="myForm" action="/" method="POST">
+			<h1>HTML5 Validator Demo</h1>
+			<p>by Moe Quraishi</p>
+
+			<div class="input-group">
+				<label for="firstName">First Name</label>
+				<input 
+					type="text" 
+					id="firstName" 
+					class="validate-field" 
+					placeholder="First name" 
+					pattern="[A-Za-zÀ-ž\-\s]+" 
+					minlength="3" 
+					maxlength="30" 
+					required>
+			</div>
+			<div class="input-group">
+				<label for="lastName">Last Name</label>
+				<input 
+					type="text" 
+					id="lastName" 
+					class="validate-field" 
+					placeholder="Last name" 
+					pattern="[A-Za-zÀ-ž\-\s]+" 
+					minlength="3" 
+					maxlength="30" 
+					required>
+			</div>
+
+			<div class="input-group">
+				<label for="gender">Gender</label>
+				<select class="validate-field" name="gender" id="gender" required>
+					<option value="" selected disabled >Please select an option</option>
+					<option value="Female">Female</option>
+					<option value="Male">Male</option>
+					<option value="Other">Other</option>
+				</select>
+			</div>
+
+			<button type="submit" class="submit-btn">Submit</button>
+		</form>
+	</div>
+	
+	<!-- main.js -->
+	<script src="static/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,118 @@
+/*
+=======================
+Globals
+=======================
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+}
+
+body {
+	background-color: #efefef;
+	font-size: 16px;
+}
+
+#wrapper {
+	padding: 20px 10px;
+}
+/*
+=======================
+Fonts
+=======================
+*/
+body,button,input,p {
+	font-family: 'Quicksand', Helvetica, sans-serif;
+	text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+}
+
+/*
+=======================
+Buttons
+=======================
+*/
+.submit-btn {
+	background: #e74c3c;
+    border: none;
+    color: #ffffff;
+    height: 40px;
+    width: 100%;
+    max-width: 150px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #ea776b;
+}
+
+/*
+=======================
+form
+=======================
+*/
+#myForm {
+	width: 100%;
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+#myForm > p {
+	margin-bottom: 20px;
+	text-align: right;
+}
+
+/*
+=======================
+Inputs / Selects
+=======================
+*/
+.input-group {
+	margin-bottom: 20px;
+}
+.input-group input,
+.input-group select {
+    width: 100%;
+    height: auto;
+    min-height: 35px;
+    text-indent: 10px;
+    position: relative;
+    font-size: 16px;
+    border: 1px solid #dadada;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+.input-group select::after {
+	font-family: "Font Awesome 5 Brands"; content: "\f099";
+	background: #ffffff;
+	position: absolute;
+	right: 	3px;
+	top: 0;
+	pointer-events: none;
+}
+
+.input-group label {
+	font-weight: 700;
+	margin-bottom: 5px;
+	display: block;
+}
+
+
+/*
+=======================
+Errors
+=======================
+*/
+
+.validation-error {
+	color: #e74c3c;
+	font-weight: 700;
+	padding-top: 5px;
+}
