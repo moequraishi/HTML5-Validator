@@ -11,4 +11,5 @@ Firefox
 and everything else...
 
 ## Author
-Moe Quraishi (http://www.HireMoe.com)
+Moe Quraishi 
+(http://www.HireMoe.com)
