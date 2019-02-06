@@ -1,4 +1,4 @@
-# HTML5-Validator
+# HTML5 Validator
 A light-weight and pure Vanilla JS Validator using HTML5 Attributes.
 
 ## Browser Support
