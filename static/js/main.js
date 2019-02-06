@@ -7,9 +7,12 @@ const validatedInputs =  document.querySelectorAll('input.validate-field, select
 // Custom messages are set up here
 // based on HTML5 attributes
 const customMessages = {
-    valueMissing: ' cannot be blank.',
-    tooShort: ' is short a couple of characters, please try again.', 
-    patternMismatch: ' field does not allow illegal characters, please try again.'
+    badInput: ' believes you are bad, please fix yourself!',
+    valueMissing: ' cannot be blank. We needz your data!!',
+    tooShort: ' is too short in characters, add more!', 
+    tooLong: ' has too many characters bud, shorten it up!',
+    patternMismatch: ' does not allow illegal characters, you have been temporarily denied entry to this form until you provide legal data work.',
+    typeMismatch: ' denied you because you\'re not it\'s type. Change your type and you may have a chance ;)'
 };
 
 // Fetch the custom message based on the object vs the HTML5 validity error type
@@ -46,25 +49,31 @@ function validateInputs() {
                 error.className = validationErrorClass;
                 error.textContent = message;
 
+                // Insert error to page, scroll to error.
+                // In case of multiple errors, it will scroll to top most
                 if (insertError) {
                     parent.insertBefore(error, input.nextSibling);
                     parent.scrollIntoView();
                 }
 
             } else {
-                error.remove()
+                // If form is valid, remove errors.
+                error.remove();
             }
         }
+        
+        // We can only update the error or hide it on input.
+        // Otherwise it will show when typing.
         input.addEventListener('input', function () {
-            // We can only update the error or hide it on input.
-            // Otherwise it will show when typing.
+            
             checkValidity({insertError: false});
         });
+
+        // We can also create the error in invalid.
         input.addEventListener('invalid', function (e) {
-            // prevent showing the default display
+            // prevent showing the default error
             e.preventDefault();
 
-            // We can also create the error in invalid.
             checkValidity({insertError: true});
         });
     }
