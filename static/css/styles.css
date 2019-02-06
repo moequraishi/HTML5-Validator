@@ -10,18 +10,21 @@ Globals
 }
 
 body {
-	background-color: #efefef;
-	font-size: 16px;
+    background: linear-gradient(0deg, rgba(228,28,60,1) 0%, rgba(252,176,69,1) 100%);
+    font-size: 16px;
+    height: 100vh;
 }
 
 #wrapper {
 	padding: 20px 10px;
 }
+
 /*
 =======================
 Fonts
 =======================
 */
+
 body,button,input,p {
 	font-family: 'Quicksand', Helvetica, sans-serif;
 	text-rendering: auto;
@@ -33,8 +36,9 @@ body,button,input,p {
 Buttons
 =======================
 */
+
 .submit-btn {
-	background: #e74c3c;
+	background: #00a0c5;
     border: none;
     color: #ffffff;
     height: 40px;
@@ -45,21 +49,27 @@ Buttons
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
+    float: right;
 }
 
 .submit-btn:hover {
-    background-color: #ea776b;
+    background-color: #37b8d6;
 }
 
 /*
 =======================
-form
+Form
 =======================
 */
+
 #myForm {
 	width: 100%;
 	max-width: 400px;
 	margin: 0 auto;
+}
+
+#myForm h1 {
+	color: #fff;
 }
 
 #myForm > p {
@@ -72,6 +82,7 @@ form
 Inputs / Selects
 =======================
 */
+
 .input-group {
 	margin-bottom: 20px;
 }
@@ -89,19 +100,23 @@ Inputs / Selects
     -moz-appearance: none;
     appearance: none;
 }
-.input-group select::after {
-	font-family: "Font Awesome 5 Brands"; content: "\f099";
-	background: #ffffff;
-	position: absolute;
-	right: 	3px;
-	top: 0;
-	pointer-events: none;
+.input-group select {
+	background: #fff url('https://cdn3.iconfinder.com/data/icons/google-material-design-icons/48/ic_keyboard_arrow_down_48px-128.png') no-repeat;
+	background-size: 30px;
+    background-position: right 5px center;
+}
+
+/* IE10 To Display Custom Select Chevron */
+select::-ms-expand {
+    display: none;
 }
 
 .input-group label {
 	font-weight: 700;
 	margin-bottom: 5px;
 	display: block;
+	user-select: none;
+	color: #ffffff;
 }
 
 
@@ -112,7 +127,7 @@ Errors
 */
 
 .validation-error {
-	color: #e74c3c;
+	color: #00000;
 	font-weight: 700;
 	padding-top: 5px;
 }
