@@ -1,3 +1,6 @@
+// Form Element
+document.querySelector('#myForm');
+
 // All the inputs/select drop downs to validate
 const validatedInputs =  document.querySelectorAll('input.validate-field, select.validate-field');
 
@@ -71,6 +74,8 @@ function validateInputs() {
 // perhaps an Ajax/XHR reply.
 validateInputs();
 
-window.FontAwesomeConfig = {
-searchPseudoElements: true
-}
+
+// For testing pursposes prevent form submission
+myForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+});
