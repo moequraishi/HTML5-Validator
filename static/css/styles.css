@@ -12,7 +12,8 @@ Globals
 body {
     background: linear-gradient(0deg, rgba(228,28,60,1) 0%, rgba(252,176,69,1) 100%);
     font-size: 16px;
-    height: 100vh;
+    height: 100%;
+    min-height: 100vh;
 }
 
 #wrapper {
@@ -49,11 +50,15 @@ Buttons
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    float: right;
 }
 
 .submit-btn:hover {
     background-color: #37b8d6;
+}
+
+.btn-box {
+	width: 100%;
+	text-align: right;
 }
 
 /*
@@ -77,6 +82,16 @@ Form
 	text-align: right;
 }
 
+.data-text {
+	display: none;
+    padding: 10px;
+    background: rgba(0,0,0,0.2);
+    color: #fff;
+    margin-top: 20px;
+}
+.data-text h2 {
+    margin-bottom: 5px;
+}
 /*
 =======================
 Inputs / Selects
@@ -127,7 +142,7 @@ Errors
 */
 
 .validation-error {
-	color: #00000;
+	color: #000000;
 	font-weight: 700;
 	padding-top: 5px;
 }

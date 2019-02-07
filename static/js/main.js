@@ -17,13 +17,9 @@ const customMessages = {
 
 // Fetch the custom message based on the object vs the HTML5 validity error type
 function getCustomMessage (type, validity) {
-    if (validity.typeMismatch) {
-        return customMessages[type + 'Mismatch']
-    } else {
-        for (let invalidKey in customMessages) {
-            if (validity[invalidKey]) {
-                return customMessages[invalidKey]
-            }
+    for (let invalidKey in customMessages) {
+        if (validity[invalidKey]) {
+            return customMessages[invalidKey]
         }
     }
 }
@@ -87,4 +83,42 @@ validateInputs();
 // For testing pursposes prevent form submission
 myForm.addEventListener("submit", function(e) {
     e.preventDefault();
+    let firstName = "",
+        lastName = "",
+        email = "",
+        gender = "",
+        html = "";
+
+    for(let i=0; i < validatedInputs.length; i++) {
+        let inputVal = validatedInputs[i].value;
+        let tempLabel = validatedInputs[i].previousElementSibling.textContent;
+        
+        if (tempLabel === 'First Name') {
+            firstName = validatedInputs[i].value;
+        } else if (tempLabel === 'Last Name') {
+            lastName = validatedInputs[i].value;
+        } else if (tempLabel === 'Email') {
+            email = validatedInputs[i].value;
+        } else if (tempLabel === 'Gender') {
+            gender = validatedInputs[i].value;
+        }
+    }
+
+    let userData = {
+        firstName: firstName,
+        lastName: lastName,
+        email: email,
+        gender: gender
+    }
+
+    console.log(userData);
+
+    html += '<h2>Submitted values: </h2>';
+    html += '<p><strong>First name:</strong> '+ userData.firstName + '</p>';
+    html += '<p><strong>Last name:</strong> '+ userData.lastName + '</p>';
+    html += '<p><strong>Email address:</strong> '+ userData.email + '</p>';
+    html += '<p><strong>Gender:</strong> '+ userData.gender + '</p>';
+
+    document.querySelector('.data-text').innerHTML = html;
+    document.querySelector('.data-text').style = "display: block";
 });

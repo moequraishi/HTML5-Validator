@@ -42,6 +42,18 @@
 					maxlength="30" 
 					required>
 			</div>
+			<div class="input-group">
+				<label for="email">Email</label>
+				<input 
+					type="email" 
+					id="email" 
+					class="validate-field" 
+					placeholder="E-mail Address" 
+					pattern="^(.+)@(.+)$" 
+					minlength="3" 
+					maxlength="30" 
+					required>
+			</div>
 
 			<div class="input-group">
 				<label for="gender">Gender</label>
@@ -53,8 +65,14 @@
 				</select>
 			</div>
 
-			<button type="submit" class="submit-btn">Submit</button>
+			<div class="btn-box">
+				<button type="submit" class="submit-btn">Submit</button>
+			</div>
 		</form>
+
+		<div class="data-text">
+			<p></p>
+		</div>
 	</div>
 	
 	<!-- main.js -->
